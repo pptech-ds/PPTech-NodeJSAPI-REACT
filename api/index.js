@@ -12,6 +12,7 @@ const app = express();
 
 // parse JSON bodies (as sent by API Clients)
 app.use(express.json());
+app.use(cors());
 
 // database connection informations
 const db = mysql.createConnection({
@@ -40,32 +41,40 @@ app.post('/register', (req, res) => {
     // getting body contents
     const {email, password, passwordConfirm} = req.body;
 
+    
     // SQL query to check if the given email doesnt exist in our database
-    db.query('SELECT email FROM user WHERE email = ?', [email], async (error, results) =>{
+    db.query('SELECT email FROM user WHERE email = ?', [email.trim()], async (error, result) =>{
         if(error){
             console.log(error);
         }
 
         // if the result of the previous query is > 0, that means an email already exists
-        if(results.length > 0){
+        if(result.length > 0){
             return res.json({
                 message: 'Provided email already used'
             })
         }
         //  checking if the given passwords corresponds
-        else if (password !== passwordConfirm) {
+        else if (password.trim() !== passwordConfirm.trim()) {
             return res.json({
                 message: 'Provided passwords does not match'
             })
-        }
+        } 
+        // checking if email and password are not empty
+        else if(email.trim().length === 0 || password.trim().length === 0 || password.trim().length < 5) {
+        // 400 for bad http request
+        return res.status(400).json({
+            message: 'email, password have to be filled and password length must at leat 6 characters'
+        });
+    }
 
         // hashing the password to secure it
-        let hashedPassword = await bcrypt.hash(password, 8)
+        let hashedPassword = await bcrypt.hash(password.trim(), 10)
         // printing the hashed password in cosole to check 
         console.log(hashedPassword);
 
         // if all previous checks are clean, we can insert our user into our database
-        db.query('INSERT INTO user SET ?', {email: email, password: hashedPassword}, (error, results) => {
+        db.query('INSERT INTO user SET ?', {email: email.trim(), password: hashedPassword}, (error, result) => {
             if(error){
                 console.log(error);
             } else {
@@ -85,7 +94,7 @@ app.post('/login', (req, res) => {
         const {email, password} = req.body;
 
         // checking if email and password are not empty
-        if(!email || !password) {
+        if(email.trim().length === 0 || password.trim().length === 0) {
             // 400 for bad http request
             return res.status(400).json({
                 message: 'Please provide a valid email and password'
@@ -93,12 +102,12 @@ app.post('/login', (req, res) => {
         }
 
         // query to select user by provided email
-        db.query('SELECT * FROM user WHERE email = ?', [email], async (error, results) => {
+        db.query('SELECT * FROM user WHERE email = ?', [email.trim()], async (error, result) => {
             // printing result in console to check
-            console.log(results);
+            console.log(result);
 
-            // if results is empty or compared password is incorrect
-            if((results.length == 0)|| !(await bcrypt.compare(password, results[0].password))){
+            // if result is empty or compared password is incorrect
+            if((result.length == 0)|| !(await bcrypt.compare(password.trim(), result[0].password))){
                 // 401 for wrong informations given
                 res.status(401).json({
                     message: 'Email or Password incorrect'
@@ -107,7 +116,7 @@ app.post('/login', (req, res) => {
             // if all previous checks are clean, let's login the user
             else {
                 // getting user id
-                const id = results[0].id;
+                const id = result[0].id;
                 // generating jwt token for this specific user, necessary for navigations
                 const token = jwt.sign({id}, 'jwt_test_pass', {
                     // defining expiration date for generated token, here 10 days
@@ -132,8 +141,8 @@ app.post('/login', (req, res) => {
 
                 // retrun status 200 if everything happend correctly
                 res.status(200).json({
-                    message: 'User connected'
-                });                
+                    result
+                });  
             }
         })
     } catch (error) {
@@ -143,7 +152,7 @@ app.post('/login', (req, res) => {
 
 
 // port from where our api will be used
-const PORT=3000;
+const PORT=3005;
 
 
 // starting to listen events on specified port
