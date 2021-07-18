@@ -76,7 +76,7 @@ I created 3 files to manage SQL database, to execute the scripts, you just need 
 - "drop_databse.js": drop our database "lettria" if necessary
 
 ## Api-Registration 
-1. About the API
+1. About the API  
 Our first api will be used to register the user, short summary of the process:  
   - check if the given "email" already exists in the database
   - if not, check the given 2 passwords correspond
@@ -96,7 +96,7 @@ Let's check our API using POSTMAN:
 We can say our API is functional as we expected. 
 
 ## Api-Login
-1. About the API
+1. About the API  
 Our second api will be used to login, short summary of the process:  
   - checking if provided email or password are not empty, if one of thoses are empty we provided error 400 (bad request)  
   - if the previous check is correct, we query into our database using given "email"
