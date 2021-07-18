@@ -110,7 +110,7 @@ Let's check our API using POSTMAN:
   - Let's try to login using wrong email:  
   ![image](https://user-images.githubusercontent.com/61125395/126078061-d0301f89-84ab-4248-87d1-20e70914e2b0.png)
   - Let's try to login using correct credentials:  
-  ![image](https://user-images.githubusercontent.com/61125395/126078090-4918fd46-8d43-4f72-a70f-7ed306f8e4f3.png)
+  ![image](https://user-images.githubusercontent.com/61125395/126078090-4918fd46-8d43-4f72-a70f-7ed306f8e4f3.png)  
 We can say our API is functional as we expected. 
 
 
