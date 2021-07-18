@@ -1,6 +1,6 @@
 # Reference-Documentations
 - [Install NodeJS for Ubuntu](https://doc.ubuntu-fr.org/nodejs)  
-- [NPM Doncs](https://docs.npmjs.com/)  
+- [NPM Docs](https://docs.npmjs.com/)  
 - [SQL Management with NodeJS](https://www.w3schools.com/nodejs/nodejs_mysql.asp)
 - [Cookie Options](https://developer.mozilla.org/fr/docs/Web/HTTP/Cookies)
 
@@ -80,7 +80,7 @@ I created 3 files to manage SQL database, to execute the scripts, you just need 
 Our first api will be used to register the user, short summary of the process:  
   - check if the given "email" already exists in the database
   - if not, check the given 2 passwords correspond
-  - if all previous checks are clean, we hash the given password to encrypt it 
+  - if all previous checks are clean, we hash the given password to encrypt it using "bcrypt"  
   - and finally we insert the user in the database  
 You can find all details into the code in file "index.js", all steps are commented inside it.  
 2. API tests  
@@ -94,5 +94,24 @@ Let's check our API using POSTMAN:
   - Let's try to insert again the same user:  
   ![image](https://user-images.githubusercontent.com/61125395/126076899-fda4c081-950c-4580-a3f5-e6177136058e.png)  
 We can say our API is functional as we expected. 
+
+## Api-Login
+1. About the API
+Our second api will be used to login, short summary of the process:  
+  - checking if provided email or password are not empty, if one of thoses are empty we provided error 400 (bad request)  
+  - if the previous check is correct, we query into our database using given "email"
+  - we check if results is not empty and we compare the given password with existing one in the database using "bcrypt"  
+  - if all previous checks are clean, we get the user id and we generate the JWT token, necessary to navigate using user informations in the browser  
+  - we define also some cookie options, like limit of time where the cookie will be usable, and we secure also any XSS injection 
+2. API tests  
+Let's check our API using POSTMAN:  
+  - Let's try to provide empty email or password:  
+  ![image](https://user-images.githubusercontent.com/61125395/126078003-505883e4-1e28-49d0-a3a2-ea954dc4ef24.png)
+  - Let's try to login using wrong email:  
+  ![image](https://user-images.githubusercontent.com/61125395/126078061-d0301f89-84ab-4248-87d1-20e70914e2b0.png)
+  - Let's try to login using correct credentials:  
+  ![image](https://user-images.githubusercontent.com/61125395/126078090-4918fd46-8d43-4f72-a70f-7ed306f8e4f3.png)
+We can say our API is functional as we expected. 
+
 
 
