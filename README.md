@@ -2,6 +2,7 @@
 - [Install NodeJS for Ubuntu](https://doc.ubuntu-fr.org/nodejs)  
 - [NPM Doncs](https://docs.npmjs.com/)  
 - [SQL Management with NodeJS](https://www.w3schools.com/nodejs/nodejs_mysql.asp)
+- [Cookie Options](https://developer.mozilla.org/fr/docs/Web/HTTP/Cookies)
 
 # Install-NodeJS-Ubuntu 
 - Install
