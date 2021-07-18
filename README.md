@@ -18,12 +18,14 @@ node -v
 ![image](https://user-images.githubusercontent.com/61125395/126072607-41e65942-22eb-4fc5-9ec8-60eff7e7fde0.png)
 
 # NodeJS-API
-- Create directory "api" and go into that to init the project to have "package.json" file where all our dependencies will be installed  
+## Dependencies-management
+1. Create directory "api" and go into that to init the project to have "package.json" file where all our dependencies will be installed  
 ```console
 npm init -y
 ```
 ![image](https://user-images.githubusercontent.com/61125395/126072774-995ffd43-4161-42e2-95b2-eb55d97f7691.png)
-- Install necessary depencies for our project  
+
+2. Install necessary depencies for our project  
   - Some explanations about installed packages:
     * express : necessary to define routes of your application based on HTTP methods and URLs.
     * body-parser : necessary to handle HTTP requests and extract body content.
@@ -36,7 +38,8 @@ npm init -y
 npm i express mysql cookie-parser jsonwebtoken bcryptjs nodemon
 ```
 ![image](https://user-images.githubusercontent.com/61125395/126073070-d5d54ae7-3496-413c-8801-15cbf40aceee.png)
-- Add in file "package.json" in part "scrpit" nodemon command to easily start it with command "npm start":  
+
+3. Add in file "package.json" in part "scrpit" nodemon command to easily start it with command "npm start":  
 ```json
 {
   "name": "api",
@@ -60,5 +63,13 @@ npm i express mysql cookie-parser jsonwebtoken bcryptjs nodemon
   }
 }
 ```
-- Add ".gitignore" file at the root of the project to avoid to upload "node_modules" into our git repo
+4. Add ".gitignore" file at the root of the project to avoid to upload "node_modules" into our git repo
 ![image](https://user-images.githubusercontent.com/61125395/126073937-5fc83251-75d0-40cc-b894-dcdbaf2e2b55.png)
+
+## Create-database  
+I created 3 files to manage SQL database, to execute the scripts, you just need to do "node <script_name>":
+- "create_database.js": create database called "lettria"
+- "create_tables.js": create table called "user" in our database "lettrie"
+- "drop_databse.js": drop our database "lettria" if necessary
+
+
