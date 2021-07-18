@@ -75,7 +75,70 @@ app.post('/register', (req, res) => {
             }
         })
     });
+})
 
+
+// api login
+app.post('/login', (req, res) => {
+    try {
+        // getting body contents
+        const {email, password} = req.body;
+
+        // checking if email and password are not empty
+        if(!email || !password) {
+            // 400 for bad http request
+            return res.status(400).json({
+                message: 'Please provide a valid email and password'
+            });
+        }
+
+        // query to select user by provided email
+        db.query('SELECT * FROM user WHERE email = ?', [email], async (error, results) => {
+            // printing result in console to check
+            console.log(results);
+
+            // if results is empty or compared password is incorrect
+            if((results.length == 0)|| !(await bcrypt.compare(password, results[0].password))){
+                // 401 for wrong informations given
+                res.status(401).json({
+                    message: 'Email or Password incorrect'
+                })
+            } 
+            // if all previous checks are clean, let's login the user
+            else {
+                // getting user id
+                const id = results[0].id;
+                // generating jwt token for this specific user, necessary for navigations
+                const token = jwt.sign({id}, 'jwt_test_pass', {
+                    // defining expiration date for generated token, here 10 days
+                    expiresIn: '10d'
+                });
+
+                // printing generated token in console to check
+                console.log('the token is : ' + token);
+
+                // adding some cookie options
+                const cookieOptions = {
+                    // cookie expiration date : days x hours (24 in one day) x 60 (60 minutes in 1 hour) x 60 (60 seconds in 1 minute) x 1000 (1000 milliseconds in 1s)
+                    expires: new Date(
+                        Date.now() + 10 * 24 * 60 * 60 * 1000
+                    ),
+                    // to secure XSS injection
+                    httpOnly: true 
+                }
+
+                // generating the JWT cookie
+                res.cookie('jwt', token, cookieOptions);
+
+                // retrun status 200 if everything happend correctly
+                res.status(200).json({
+                    message: 'User connected'
+                });                
+            }
+        })
+    } catch (error) {
+        console.error(error);
+    }
 })
 
 
