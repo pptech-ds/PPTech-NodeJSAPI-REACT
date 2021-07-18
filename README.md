@@ -88,7 +88,7 @@ Let's check our API using POSTMAN:
   ![image](https://user-images.githubusercontent.com/61125395/126076797-0745474b-6fd7-4f39-afed-5fb6c9a04761.png)
   - Let's try to insert a user, passwords match:  
   ![image](https://user-images.githubusercontent.com/61125395/126076843-d124e168-697e-4108-bc89-bb7a777acf08.png)
-  - Let's check in our database if the user is corerctly inserted:  
+  - Let's check in our database if the user is corerctly inserted with hashed password:  
   ![image](https://user-images.githubusercontent.com/61125395/126076870-83a96dc1-cbc5-45b5-8d8f-98b626f46908.png)
   - Let's try to insert again the same user:  
   ![image](https://user-images.githubusercontent.com/61125395/126076899-fda4c081-950c-4580-a3f5-e6177136058e.png)  
