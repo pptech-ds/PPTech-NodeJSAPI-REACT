@@ -67,6 +67,7 @@ npm i express mysql cookie-parser jsonwebtoken bcryptjs nodemon
 ![image](https://user-images.githubusercontent.com/61125395/126073937-5fc83251-75d0-40cc-b894-dcdbaf2e2b55.png)
 
 ## Create-database  
+About our database, I decided to use SQL database, our database will be called "lettria" and our table "user", the table "user" will contain 3 columns, "id" integer, "email" varchar (255), and "password" varchar(255)  
 I created 3 files to manage SQL database, to execute the scripts, you just need to do "node <script_name>":
 - "create_database.js": create database called "lettria"
 - "create_tables.js": create table called "user" in our database "lettrie"
