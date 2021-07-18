@@ -31,6 +31,7 @@ npm init -y
     * body-parser : necessary to handle HTTP requests and extract body content.
     * cookie-parser : necessary to parse cookies in the navigator.
     * bcryptjs : necessary to hash the password.
+    * cors: Cross-Origin Resource Sharing, necessary to allow requested resources on a web server depend on where the HTTP request was initiated.
     * mysql : necessary to handle SQL database.
     * jwtwebtoken : JSON Web Token (JWT) which is a JSON object, and necessary to create unique token per user logged into our app.
     * nodemon : usefull in developpement, will restart automatically the server if any change is detected in our files.
