@@ -80,7 +80,7 @@ npm init -y
     * jwtwebtoken : JSON Web Token (JWT) which is a JSON object, and necessary to create unique token per user logged into our app.
     * nodemon : usefull in developpement, will restart automatically the server if any change is detected in our files.
     ```console
-    npm i express mysql cookie-parser jsonwebtoken bcryptjs nodemon
+    npm i express mysql cookie-parser jsonwebtoken bcryptjs cors nodemon
     ```
 ![image](https://user-images.githubusercontent.com/61125395/126073070-d5d54ae7-3496-413c-8801-15cbf40aceee.png)
 
