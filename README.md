@@ -108,7 +108,7 @@ npm init -y
   }
 }
 ```
-4. Add ".gitignore" file at the root of the project to avoid to upload "node_modules" into our git repo
+4. Add ".gitignore" file at the root of the project to avoid to upload "node_modules" into our git repo   
 ![image](https://user-images.githubusercontent.com/61125395/126073937-5fc83251-75d0-40cc-b894-dcdbaf2e2b55.png)
 
 ## Create-database  
