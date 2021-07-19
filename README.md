@@ -1,9 +1,51 @@
+# Table of Contents 
+- [About-The-Project](#About-The-Project)  
+- [Quick-Start](#Quick-Start)  
+- [Reference-Documentations](#Reference-Documentations)
+- [Install-NodeJS-Ubuntu](#Install-NodeJS-Ubuntu)  
+- [NodeJS-API](#NodeJS-API)  
+  - [Dependencies-management](#Dependencies-management)
+  - [Create-database](#Create-database)
+  - [Api-Registration](#Api-Registration)
+  - [Api-Login](#Api-Login)
+- [REACT](#REACT)
+  - [Project-Init](#Project-Init)
+  - [About-The-Front](#About-The-Front)
+  - [Some-trials](#Some-trials)
+
+ 
+
+# About-The-Project  
+This project was created for one of my technical test, I have to create registration and login app using NodeJS for API part, and REACT for front. For database I decided to use SQL because this is the one I am using at the moment.
+
+# Quick-Start
+You will need at least 2 terminals, one to launch the API, and another one to launch the APP, your API will be launched on PORT 3005, and your APP on PORT 3000. 
+- Clone that project:  
+```console
+git clone https://github.com/pptech-ds/PPTech-NodeJSAPI-REACT.git
+cd PPTech-NodeJSAPI-REACT
+```
+- First terminal for API: Install dependencies it:
+```console
+cd api
+npm install
+npm start
+```
+- Second terminal for APP: Install dependencies it:
+```console
+cd app
+npm install
+npm start
+```
+- Goto "http://localhost:3000" and you have to see the APP functional.  
+
 # Reference-Documentations
 - [Install NodeJS for Ubuntu](https://doc.ubuntu-fr.org/nodejs)  
 - [NPM Docs](https://docs.npmjs.com/)  
 - [SQL Management with NodeJS](https://www.w3schools.com/nodejs/nodejs_mysql.asp)
 - [Cookie Options](https://developer.mozilla.org/fr/docs/Web/HTTP/Cookies)
-- [REACT Documentation](https://fr.reactjs.org/docs/create-a-new-react-app.html)  
+- [REACT Documentation](https://fr.reactjs.org/docs/create-a-new-react-app.html) 
+- [Tutorial to Understand the basics](https://medium.com/@sarthakmittal1461/to-build-login-sign-up-and-logout-restful-apis-with-node-js-using-jwt-authentication-f3d7287acca2) 
 
 # Install-NodeJS-Ubuntu 
 - Install
@@ -137,7 +179,7 @@ npm start
 I didn't have any knowledge on REACT before starting this project, so I did really some basics. I splitted the pages into "components" directory, that directory contains 4 pages, 1 to manage the navigation code using <ul> and <il> as usual, 1 for registration form, and another one for login form. Nothing else to say, most of the technical part is done un API parts. 
     
  
-## Some-trials:
+## Some-trials
   - Our App will be launched on "http://localhost:3000/":  
   ![image](https://user-images.githubusercontent.com/61125395/126089638-e73ddc36-4850-4c7f-ae3f-3e1a88e3c309.png)
   - Let's click on "Registration" to add user in our database, we can see a basic page for registration: 
