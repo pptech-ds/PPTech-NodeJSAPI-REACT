@@ -176,7 +176,7 @@ npm start
     ```
     
 ## About-The-Front
-I didn't have any knowledge on REACT before starting this project, so I did really some basics. I splitted the pages into "components" directory, that directory contains 4 pages, 1 to manage the navigation code using <ul> and <il> as usual, 1 for registration form, and another one for login form. Nothing else to say, most of the technical part is done un API parts. 
+I didn't have any knowledge on REACT before starting this project, so I did really some basics. I splitted the pages into "components" directory, that directory contains 4 pages, 1 to manage the navigation code using ul and li as usual, 1 for registration form, and another one for login form. Nothing else to say, most of the technical part is done un API parts. 
     
  
 ## Some-trials
