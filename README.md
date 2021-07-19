@@ -184,9 +184,9 @@ I didn't have any knowledge on REACT before starting this project, so I did real
   ![image](https://user-images.githubusercontent.com/61125395/126089638-e73ddc36-4850-4c7f-ae3f-3e1a88e3c309.png)
   - Let's click on "Registration" to add user in our database, we can see a basic page for registration: 
   ![image](https://user-images.githubusercontent.com/61125395/126089746-b8598bec-ae1b-49b2-adcb-1a725fc89b97.png)
-  - Let's try to add a user with empty emmail or password, we can a message showing you some constraints to respect:  
+  - Let's try to add a user with empty email or password, we can see a message showing you some constraints to respect:  
   ![image](https://user-images.githubusercontent.com/61125395/126089840-93fe00b0-ab0f-4848-a2c0-1c26071b3797.png)
-  - Let's try to add a user with email and not matching password, we can see a message saying there is a missmatch on given passwords:  
+  - Let's try to add a user with email and not matching passwords, we can see a message saying there is a missmatch on given passwords:  
   ![image](https://user-images.githubusercontent.com/61125395/126089938-52db2203-e0f8-4f81-bec1-b642197c5c7f.png)
   - Let's add a user with all constraints, we can see a message saying that user is registered:  
   ![image](https://user-images.githubusercontent.com/61125395/126090033-67927fdf-849e-452c-b53b-9ab0d478ff23.png)
