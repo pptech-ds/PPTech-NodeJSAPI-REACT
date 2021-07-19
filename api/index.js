@@ -63,7 +63,7 @@ app.post('/register', (req, res) => {
         // checking if email and password are not empty
         else if(email.trim().length === 0 || password.trim().length === 0 || password.trim().length < 5) {
         // 400 for bad http request
-        return res.status(400).json({
+        return res.json({
             message: 'email, password have to be filled and password length must at leat 6 characters'
         });
     }
@@ -96,7 +96,7 @@ app.post('/login', (req, res) => {
         // checking if email and password are not empty
         if(email.trim().length === 0 || password.trim().length === 0) {
             // 400 for bad http request
-            return res.status(400).json({
+            return res.json({
                 message: 'Please provide a valid email and password'
             });
         }
@@ -109,7 +109,7 @@ app.post('/login', (req, res) => {
             // if result is empty or compared password is incorrect
             if((result.length == 0)|| !(await bcrypt.compare(password.trim(), result[0].password))){
                 // 401 for wrong informations given
-                res.status(401).json({
+                res.json({
                     message: 'Email or Password incorrect'
                 })
             } 
