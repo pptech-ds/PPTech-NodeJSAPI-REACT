@@ -126,9 +126,41 @@ npm start
   - Some explanations about installed packages:
     * axios: necessary to handle HTTP requests from our REACT app to api
     * react-router-dom: necessary to handle routes 
+    * react-bootstrap bootstrap@5.0.2: to have smarter view of our pages
     ```console
-    npm i axios react-router-dom
+    npm i axios react-router-dom react-bootstrap bootstrap@5.0.2
+    npm start
     ```
+    
+3. Let's do some trials:
+  - Our App will be launched on "http://localhost:3000/":  
+  ![image](https://user-images.githubusercontent.com/61125395/126089638-e73ddc36-4850-4c7f-ae3f-3e1a88e3c309.png)
+  - Let's click on "Registration" to add user in our database, we can see a basic page for registration: 
+  ![image](https://user-images.githubusercontent.com/61125395/126089746-b8598bec-ae1b-49b2-adcb-1a725fc89b97.png)
+  - Let's try to add a user with empty emmail or password, we can a message showing you some constraints to respect:  
+  ![image](https://user-images.githubusercontent.com/61125395/126089840-93fe00b0-ab0f-4848-a2c0-1c26071b3797.png)
+  - Let's try to add a user with email and not matching password, we can see a message saying there is a missmatch on given passwords:  
+  ![image](https://user-images.githubusercontent.com/61125395/126089938-52db2203-e0f8-4f81-bec1-b642197c5c7f.png)
+  - Let's add a user with all constraints, we can see a message saying that user is registered:  
+  ![image](https://user-images.githubusercontent.com/61125395/126090033-67927fdf-849e-452c-b53b-9ab0d478ff23.png)
+  - We can check that in our database, we can see that user "user_lettria@test.com" was correctly added with hashed password:    
+  ![image](https://user-images.githubusercontent.com/61125395/126090167-50c72e9b-183f-4fa5-a5ea-2b5d2d983fd0.png)
+  - Now let's register again with the same user, we can a message saying that user is already in our database:  
+  ![image](https://user-images.githubusercontent.com/61125395/126090303-297c1320-efaa-4c5e-80e3-7702cd9d10ed.png)
+  - Let's try to login with a user which is not in our database, we can see message saying that user or password is incorrect:  
+  ![image](https://user-images.githubusercontent.com/61125395/126090372-658fec14-5e2d-493a-85d6-394e5b491cd2.png)
+  - Let's loggin with user we have previously added "user_lettria@test.com", we can see that user is correctly logged in:  
+  ![image](https://user-images.githubusercontent.com/61125395/126090465-4b3d4653-569d-41e2-bede-599440c65b34.png)
+  - We can also check in the console that the JWT token is generated once the user logged in:  
+  ![image](https://user-images.githubusercontent.com/61125395/126090592-aa5d6d47-c5a2-4007-a551-3e24285c9726.png)
+
+  
+
+
+
+
+
+
 
 
 
