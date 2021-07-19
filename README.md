@@ -25,13 +25,13 @@ You will need at least 2 terminals, one to launch the API, and another one to la
 git clone https://github.com/pptech-ds/PPTech-NodeJSAPI-REACT.git
 cd PPTech-NodeJSAPI-REACT
 ```
-- First terminal for API: Install dependencies it:
+- First terminal for API: Install dependencies launch it:
 ```console
 cd api
 npm install
 npm start
 ```
-- Second terminal for APP: Install dependencies it:
+- Second terminal for APP: Install dependencies launch it:
 ```console
 cd app
 npm install
