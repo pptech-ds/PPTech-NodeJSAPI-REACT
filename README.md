@@ -36,9 +36,9 @@ npm init -y
     * mysql : necessary to handle SQL database.
     * jwtwebtoken : JSON Web Token (JWT) which is a JSON object, and necessary to create unique token per user logged into our app.
     * nodemon : usefull in developpement, will restart automatically the server if any change is detected in our files.
-```console
-npm i express mysql cookie-parser jsonwebtoken bcryptjs nodemon
-```
+    ```console
+    npm i express mysql cookie-parser jsonwebtoken bcryptjs nodemon
+    ```
 ![image](https://user-images.githubusercontent.com/61125395/126073070-d5d54ae7-3496-413c-8801-15cbf40aceee.png)
 
 3. Add in file "package.json" in part "scrpit" nodemon command to easily start it with command "npm start":  
@@ -112,6 +112,23 @@ Let's check our API using POSTMAN:
   - Let's try to login using correct credentials:  
   ![image](https://user-images.githubusercontent.com/61125395/126078090-4918fd46-8d43-4f72-a70f-7ed306f8e4f3.png)  
 We can say our API is functional as we expected. 
+
+# REACT
+## Project-Init
+1. In order to init project files structure I followed instructions given in [REACT Documentation](https://fr.reactjs.org/docs/create-a-new-react-app.html)  
+```console
+npx create-react-app app
+cd app
+npm start
+```
+
+2. Install necessary depencies for our project  
+  - Some explanations about installed packages:
+    * axios: necessary to handle HTTP requests from our REACT app to api
+    * react-router-dom: necessary to handle routes 
+    ```console
+    npm i axios react-router-dom
+    ```
 
 
 
